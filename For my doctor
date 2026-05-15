@@ -1,0 +1,349 @@
+# For-my-doctor-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Special Surprise for Fahma ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top,#ff4d6d22,transparent 30%),
+    linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    color:white;
+    position:relative;
+}
+
+/* Background glow */
+.bg-glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#ff4d6d33;
+    border-radius:50%;
+    filter:blur(120px);
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+    from{
+        transform:translate(-100px,-50px);
+    }
+    to{
+        transform:translate(100px,50px);
+    }
+}
+
+.container{
+    position:relative;
+    z-index:10;
+    width:90%;
+    max-width:500px;
+    padding:35px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    color:#ff7b96;
+    text-shadow:0 0 20px rgba(255,123,150,0.6);
+}
+
+.subtitle{
+    font-size:1rem;
+    color:#ffd6de;
+    margin-bottom:30px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff4d6d,#ff758f);
+    color:white;
+    font-size:1.1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 8px 25px rgba(255,77,109,0.4);
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 12px 30px rgba(255,77,109,0.6);
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+#messageBox{
+    margin-top:25px;
+    display:none;
+    animation: popup 0.8s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.message-card{
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.message-text{
+    font-size:1.15rem;
+    line-height:2;
+    color:#ffe4ea;
+}
+
+/* Typing animation */
+.typing{
+    border-right:3px solid #fff;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:
+    typing 4s steps(60,end) forwards,
+    blink 0.8s infinite;
+}
+
+@keyframes typing{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    bottom:-50px;
+    font-size:22px;
+    animation: floatHeart linear forwards;
+    pointer-events:none;
+    opacity:0.8;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* Music Button */
+.music-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
+    background:#ffffff15;
+    color:white;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+
+.music-btn:hover{
+    background:#ff4d6d;
+}
+
+/* Responsive */
+@media(max-width:600px){
+
+    h1{
+        font-size:2.3rem;
+    }
+
+    .message-text{
+        font-size:1rem;
+        line-height:1.8;
+    }
+
+    button{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow"></div>
+
+<button class="music-btn" id="musicBtn">🎵</button>
+
+<div class="container">
+
+    <h1>Hi Fahma ❤️</h1>
+
+    <p class="subtitle">
+        A small surprise made with love ✨
+    </p>
+
+    <button id="giftBtn">
+        Open Your Surprise 🎁
+    </button>
+
+    <div id="messageBox">
+
+        <div class="message-card">
+
+            <p class="message-text typing">
+                Enoda life-la neenga vandhadhu dhaan
+                naan paatha best moment ❤️
+            </p>
+
+            <br>
+
+            <p class="message-text">
+                Unga smile, unga care,
+                unga presence ellame enaku romba special 💖
+                <br><br>
+
+                Every moment with you feels magical ✨
+                <br><br>
+
+                <strong>
+                    I Love You So Much Fahma ❤️
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+/* Floating Hearts */
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+
+    const hearts=["❤️","💖","💕","💘"];
+
+    heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=Math.random()*20+15+"px";
+
+    heart.style.animationDuration=Math.random()*3+4+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },7000);
+}
+
+setInterval(createHeart,250);
+
+/* Surprise Button */
+const giftBtn=document.getElementById("giftBtn");
+const messageBox=document.getElementById("messageBox");
+
+giftBtn.addEventListener("click",()=>{
+
+    giftBtn.style.display="none";
+
+    messageBox.style.display="block";
+
+});
+
+/* Music Control */
+const music=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+
+let isPlaying=false;
+
+musicBtn.addEventListener("click",()=>{
+
+    if(!isPlaying){
+
+        music.play();
+        musicBtn.innerHTML="⏸️";
+        isPlaying=true;
+
+    }else{
+
+        music.pause();
+        musicBtn.innerHTML="🎵";
+        isPlaying=false;
+    }
+
+});
+
+</script>
+
+</body>
+</html>
